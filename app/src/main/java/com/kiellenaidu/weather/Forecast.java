@@ -33,8 +33,9 @@ public class Forecast {
         Date = date;
     }
 
-    String minTemp;
-    String maxTemp;
-    String URL;
-    String Date;
+    private String minTemp;
+    private String maxTemp;
+    private String URL;
+    private String Date;
+    private String icon;
 }

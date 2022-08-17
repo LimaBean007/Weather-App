@@ -84,6 +84,13 @@ public class FiveDayWeather extends Fragment {
                 try {
                     JSONObject rootWeatherData = new JSONObject(weatherData);
                     JSONArray todayWeather = rootWeatherData.getJSONArray("DailyForecasts");
+                    for(int i =0; i < todayWeather.length(); i++)
+                    {
+                        JSONObject dailyWeather =  todayWeather.getJSONObject(i);
+                        String date = dailyWeather.getString("date");
+                        Log.i(TAG, "Daily date is : " + date);
+
+                    }
                     Log.d(TAG, "consumedJSON: " + rootWeatherData);
                 } catch (JSONException e) {
                     e.printStackTrace();
