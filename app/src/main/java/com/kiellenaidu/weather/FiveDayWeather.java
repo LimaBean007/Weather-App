@@ -51,7 +51,7 @@ public class FiveDayWeather extends Fragment {
     class GetWeatherData extends AsyncTask<URL, Void, String> {
 
         private String TAG = "JSONDATA";
-        ArrayList<Forecast> dailyWeather = new ArrayList();
+        ArrayList<Forecast> dailyWeatherList = new ArrayList();
 
         @Override
         protected String doInBackground(URL... urls) {
@@ -68,8 +68,7 @@ public class FiveDayWeather extends Fragment {
 
         @Override
         protected void onPostExecute(String weatherData) {
-            if (weatherData == null)
-            {
+            if (weatherData == null) {
                 consumedJSON(weatherData);
             }
             super.onPostExecute(weatherData);
@@ -77,19 +76,36 @@ public class FiveDayWeather extends Fragment {
         }
 
         public ArrayList<Forecast> consumedJSON(String weatherData) {
-            if (dailyWeather != null) {
-                dailyWeather.clear();
+            if (dailyWeatherList != null) {
+                dailyWeatherList.clear();
             }
             if (weatherData != null) {
                 try {
                     JSONObject rootWeatherData = new JSONObject(weatherData);
                     JSONArray todayWeather = rootWeatherData.getJSONArray("DailyForecasts");
-                    for(int i =0; i < todayWeather.length(); i++)
-                    {
-                        JSONObject dailyWeather =  todayWeather.getJSONObject(i);
+                    for (int i = 0; i < todayWeather.length(); i++) {
+                        Forecast newForecast = new Forecast();
+
+                        JSONObject dailyWeather = todayWeather.getJSONObject(i);
                         String date = dailyWeather.getString("date");
+                        newForecast.setDate(date);
                         Log.i(TAG, "Daily date is : " + date);
 
+                        JSONObject dailytemp = dailyWeather.getJSONObject("Temperature");
+                        JSONObject minTemp = dailytemp.getJSONObject("Minimum");
+                        String minTemperature = minTemp.getString("Value");
+                        Log.i(TAG, "minTemperature : " + minTemperature);
+                        JSONObject maxTemp = dailytemp.getJSONObject("Maximum");
+                        String maxTemperature = maxTemp.getString("Value");
+                        Log.i(TAG, "maxTemperature" + maxTemperature);
+                        newForecast.setMaxTemp(maxTemperature);
+                        newForecast.setMinTemp(minTemperature);
+
+                        JSONObject day = dailyWeather.getJSONObject("Day");
+                        String iconValue = day.getString("IconePhrase");
+                        newForecast.setURL(iconValue);
+                        Log.i(TAG, "iconValue" + iconValue);
+                        dailyWeatherList.add(newForecast);
                     }
                     Log.d(TAG, "consumedJSON: " + rootWeatherData);
                 } catch (JSONException e) {
