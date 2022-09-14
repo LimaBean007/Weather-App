@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "506682464807",
+    "firebase_url": "https://mcdiabetes-33e0d-default-rtdb.firebaseio.com",
+    "project_id": "mcdiabetes-33e0d",
+    "storage_bucket": "mcdiabetes-33e0d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506682464807:android:950958658da90c606dcc02",
+        "android_client_info": {
+          "package_name": "com.kiellenaidu.weather"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "506682464807-nklqcc2i3t60uoqnbjatq86uqnrt3nif.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kiellenaidu.weather",
+            "certificate_hash": "e382a4590960525957f3479c9667d5ff0cd0b9d0"
+          }
+        },
+        {
+          "client_id": "506682464807-1mstlpvq02i5goacp0h1jmsv311k6ggp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwgYPQSRT2zdIwEMiq474chrysEjjIbKM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "506682464807-1mstlpvq02i5goacp0h1jmsv311k6ggp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506682464807:android:5f0587f9494f13396dcc02",
+        "android_client_info": {
+          "package_name": "com.varsitycollege.mcdiabetes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "506682464807-1mstlpvq02i5goacp0h1jmsv311k6ggp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwgYPQSRT2zdIwEMiq474chrysEjjIbKM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "506682464807-1mstlpvq02i5goacp0h1jmsv311k6ggp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
